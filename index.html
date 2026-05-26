@@ -3,82 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marine Manager — Privacy Policy</title>
+    <title>Marine Manager — Privacy Policy & Support</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0a3d4a;
+            background: #07282f;
             color: #e8f4f5;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 40px 20px 60px;
         }
+
         .container {
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 48px;
-            border: 1px solid rgba(78,205,196,0.2);
         }
-        .logo {
+
+        /* ── Header ── */
+        .header {
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 40px;
+            gap: 16px;
+            margin-bottom: 36px;
         }
         .logo-icon {
-            width: 52px; height: 52px;
-            background: rgba(78,205,196,0.15);
-            border-radius: 12px;
-            border: 1px solid rgba(78,205,196,0.4);
+            width: 58px; height: 58px;
+            background: rgba(78,205,196,0.12);
+            border-radius: 14px;
+            border: 1px solid rgba(78,205,196,0.35);
             display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 16px; color: white; letter-spacing: -1px;
+            font-weight: 900; font-size: 17px; color: white; letter-spacing: -0.5px;
         }
-        .logo-text h1 { font-size: 20px; font-weight: 700; color: white; }
-        .logo-text p  { font-size: 13px; color: #4ecdc4; opacity: 0.8; }
+        .logo-text h1 { font-size: 22px; font-weight: 700; color: white; }
+        .logo-text p  { font-size: 12px; color: #4ecdc4; opacity: 0.85; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+
+        /* ── Tabs ── */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(78,205,196,0.12);
+        }
+        .tab {
+            flex: 1;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            border-radius: 9px;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        .tab.active {
+            background: rgba(78,205,196,0.15);
+            color: #4ecdc4;
+            border: 1px solid rgba(78,205,196,0.3);
+        }
+        .tab:hover:not(.active) { color: rgba(255,255,255,0.7); }
+
+        /* ── Card ── */
+        .card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 44px;
+            border: 1px solid rgba(78,205,196,0.15);
+        }
+
+        /* ── Sections ── */
+        .section { display: none; }
+        .section.active { display: block; }
+
         h2 {
             font-size: 26px; font-weight: 700;
             color: #4ecdc4; margin-bottom: 6px;
         }
         .subtitle {
-            font-size: 14px; color: rgba(255,255,255,0.5);
-            margin-bottom: 36px;
+            font-size: 13px; color: rgba(255,255,255,0.4);
+            margin-bottom: 32px;
             padding-bottom: 24px;
-            border-bottom: 1px solid rgba(78,205,196,0.15);
+            border-bottom: 1px solid rgba(78,205,196,0.12);
         }
         h3 {
-            font-size: 15px; font-weight: 600;
+            font-size: 14px; font-weight: 600;
             color: #4ecdc4; margin: 28px 0 10px;
+            text-transform: uppercase; letter-spacing: 0.8px;
         }
-        p { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.75); margin-bottom: 10px; }
+        p {
+            font-size: 14px; line-height: 1.8;
+            color: rgba(255,255,255,0.7); margin-bottom: 10px;
+        }
         ul { padding-left: 20px; margin-bottom: 10px; }
-        li { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+        li {
+            font-size: 14px; line-height: 1.8;
+            color: rgba(255,255,255,0.7); margin-bottom: 4px;
+        }
+
         .highlight {
-            background: rgba(78,205,196,0.08);
+            background: rgba(78,205,196,0.07);
             border-left: 3px solid #4ecdc4;
             border-radius: 6px;
             padding: 14px 18px;
             margin: 20px 0;
         }
         .highlight p { margin: 0; color: rgba(255,255,255,0.85); }
-        .contact {
-            margin-top: 36px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(78,205,196,0.15);
+
+        /* ── FAQ ── */
+        .faq-item {
+            border: 1px solid rgba(78,205,196,0.12);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
         }
+        .faq-q {
+            padding: 16px 18px;
+            font-size: 14px; font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.2s;
+        }
+        .faq-q:hover { background: rgba(78,205,196,0.06); }
+        .faq-q .arrow { color: #4ecdc4; font-size: 18px; transition: transform 0.25s; }
+        .faq-item.open .faq-q .arrow { transform: rotate(45deg); }
+        .faq-a {
+            display: none;
+            padding: 0 18px 16px;
+            font-size: 13.5px; line-height: 1.75;
+            color: rgba(255,255,255,0.6);
+            border-top: 1px solid rgba(78,205,196,0.08);
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        /* ── Contact card ── */
+        .contact-card {
+            margin-top: 32px;
+            padding: 24px;
+            border-radius: 12px;
+            background: rgba(78,205,196,0.07);
+            border: 1px solid rgba(78,205,196,0.2);
+            text-align: center;
+        }
+        .contact-card h3 { margin: 0 0 8px; }
+        .contact-card p { margin: 0; }
+
+        .divider {
+            margin-top: 32px; padding-top: 24px;
+            border-top: 1px solid rgba(78,205,196,0.12);
+        }
+
         a { color: #4ecdc4; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        .updated {
-            font-size: 12px; color: rgba(255,255,255,0.35);
-            margin-top: 32px; text-align: center;
+
+        .footer {
+            font-size: 12px; color: rgba(255,255,255,0.25);
+            margin-top: 28px; text-align: center;
         }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <div class="logo">
+    <!-- Header -->
+    <div class="header">
         <div class="logo-icon">MM</div>
         <div class="logo-text">
             <h1>Marine Manager</h1>
@@ -86,82 +178,210 @@
         </div>
     </div>
 
-    <h2>Privacy Policy</h2>
-    <p class="subtitle">Last updated: May 2026</p>
-
-    <div class="highlight">
-        <p>Marine Manager is designed with your privacy in mind. We do not collect, sell or share your personal data with third parties.</p>
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('privacy', this)">🔒 Privacy Policy</div>
+        <div class="tab" onclick="switchTab('support', this)">🛟 Support</div>
     </div>
 
-    <h3>1. Information We Collect</h3>
-    <p>Marine Manager stores the following data solely to provide app functionality:</p>
-    <ul>
-        <li>Vessel and fleet information you enter (names, registrations, technical data)</li>
-        <li>Maintenance records, observations and tasks you create</li>
-        <li>Photos you attach to records</li>
-        <li>Sea trial routes and GPS coordinates recorded during trials</li>
-        <li>Running hours and cost entries</li>
-    </ul>
+    <div class="card">
 
-    <h3>2. Where Your Data Is Stored</h3>
-    <p>All data is stored in two places:</p>
-    <ul>
-        <li><strong>On your device</strong> — using iOS local storage (UserDefaults)</li>
-        <li><strong>In your private iCloud account</strong> — using Apple's iCloud Key-Value Storage for sync across your devices</li>
-    </ul>
-    <p>We have no access to your iCloud data. It is encrypted and managed entirely by Apple.</p>
+        <!-- ══════════════ PRIVACY POLICY ══════════════ -->
+        <div class="section active" id="privacy">
 
-    <h3>3. Sign In with Apple</h3>
-    <p>Marine Manager uses Sign In with Apple for authentication. When you sign in:</p>
-    <ul>
-        <li>Apple provides us with a unique user identifier</li>
-        <li>Your name and email are optional and only used to personalise your experience</li>
-        <li>We never store your Apple ID password</li>
-        <li>You can sign out at any time from the app settings</li>
-    </ul>
+            <h2>Privacy Policy</h2>
+            <p class="subtitle">Last updated: May 2026</p>
 
-    <h3>4. Location Data</h3>
-    <p>Marine Manager requests location access for two purposes:</p>
-    <ul>
-        <li>Fetching local weather conditions for sea trial records</li>
-        <li>Recording GPS routes during sea trials</li>
-    </ul>
-    <p>Location data is stored only on your device and in your private iCloud. It is never transmitted to our servers.</p>
+            <div class="highlight">
+                <p>Marine Manager is designed with your privacy in mind. We do not collect, sell or share your personal data with third parties.</p>
+            </div>
 
-    <h3>5. Camera and Photos</h3>
-    <p>Marine Manager requests camera and photo library access to allow you to attach photos to maintenance records and observations. Photos are stored locally on your device and synced to your private iCloud only.</p>
+            <h3>1. Information We Collect</h3>
+            <p>Marine Manager stores the following data solely to provide app functionality:</p>
+            <ul>
+                <li>Vessel and fleet information you enter (names, registrations, technical data)</li>
+                <li>Maintenance records, observations and tasks you create</li>
+                <li>Photos you attach to records</li>
+                <li>Sea trial routes and GPS coordinates recorded during trials</li>
+                <li>Running hours and cost entries</li>
+            </ul>
 
-    <h3>6. Weather Data</h3>
-    <p>Marine Manager fetches weather information from Open-Meteo (open-meteo.com), a free and open-source weather API. This service receives your GPS coordinates to return local weather data. No personal information is transmitted.</p>
+            <h3>2. Where Your Data Is Stored</h3>
+            <p>All data is stored in two places:</p>
+            <ul>
+                <li><strong>On your device</strong> — using iOS local storage (UserDefaults)</li>
+                <li><strong>In your private iCloud account</strong> — using Apple's iCloud Key-Value Storage for sync across your devices</li>
+            </ul>
+            <p>We have no access to your iCloud data. It is encrypted and managed entirely by Apple.</p>
 
-    <h3>7. Analytics and Tracking</h3>
-    <p>Marine Manager does not use any third-party analytics, advertising SDKs or tracking frameworks. We do not track your behaviour across apps or websites.</p>
+            <h3>3. Sign In with Apple</h3>
+            <p>Marine Manager uses Sign In with Apple for authentication. When you sign in:</p>
+            <ul>
+                <li>Apple provides us with a unique user identifier</li>
+                <li>Your name and email are optional and only used to personalise your experience</li>
+                <li>We never store your Apple ID password</li>
+                <li>You can sign out at any time from the app settings</li>
+            </ul>
 
-    <h3>8. Data Sharing</h3>
-    <p>We do not sell, trade or share your data with any third parties. Your fleet data is entirely private.</p>
+            <h3>4. Location Data</h3>
+            <p>Marine Manager requests location access for two purposes:</p>
+            <ul>
+                <li>Fetching local weather conditions for sea trial records</li>
+                <li>Recording GPS routes during sea trials</li>
+            </ul>
+            <p>Location data is stored only on your device and in your private iCloud. It is never transmitted to our servers.</p>
 
-    <h3>9. Data Deletion</h3>
-    <p>You can delete all your data at any time by:</p>
-    <ul>
-        <li>Deleting individual records within the app</li>
-        <li>Deleting the app from your device (removes all local data)</li>
-        <li>Signing out and deleting your iCloud data from iOS Settings → Apple ID → iCloud → Manage Storage</li>
-    </ul>
+            <h3>5. Camera and Photos</h3>
+            <p>Marine Manager requests camera and photo library access to allow you to attach photos to maintenance records and observations. Photos are stored locally on your device and synced to your private iCloud only.</p>
 
-    <h3>10. Children's Privacy</h3>
-    <p>Marine Manager is intended for professional maritime use and is not directed at children under the age of 13. We do not knowingly collect data from children.</p>
+            <h3>6. Weather Data</h3>
+            <p>Marine Manager fetches weather information from Open-Meteo (open-meteo.com), a free and open-source weather API. This service receives your GPS coordinates to return local weather data. No personal information is transmitted.</p>
 
-    <h3>11. Changes to This Policy</h3>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+            <h3>7. Analytics and Tracking</h3>
+            <p>Marine Manager does not use any third-party analytics, advertising SDKs or tracking frameworks. We do not track your behaviour across apps or websites.</p>
 
-    <div class="contact">
-        <h3>12. Contact</h3>
-        <p>If you have any questions about this Privacy Policy, you require support or need to provide us with feedback  please contact us at:</p>
-        <p><a href="mailto:cs.feedback.app@gmail.com">cs.feedback.app@gmail.com</a></p>
-    </div>
+            <h3>8. Data Sharing</h3>
+            <p>We do not sell, trade or share your data with any third parties. Your fleet data is entirely private.</p>
 
-    <p class="updated">© 2026 Marine Manager. All rights reserved.</p>
+            <h3>9. Data Deletion</h3>
+            <p>You can delete all your data at any time by:</p>
+            <ul>
+                <li>Deleting individual records within the app</li>
+                <li>Deleting the app from your device (removes all local data)</li>
+                <li>Signing out and deleting your iCloud data from iOS Settings → Apple ID → iCloud → Manage Storage</li>
+            </ul>
 
-</div>
+            <h3>10. Children's Privacy</h3>
+            <p>Marine Manager is intended for professional maritime use and is not directed at children under the age of 13. We do not knowingly collect data from children.</p>
+
+            <h3>11. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+            <div class="divider">
+                <h3>12. Contact</h3>
+                <p>If you have any questions about this Privacy Policy, you require support or need to provide us with feedback, please contact us at:</p>
+                <p><a href="mailto:cs.feedback.app@gmail.com">cs.feedback.app@gmail.com</a></p>
+            </div>
+
+            <p class="footer">© 2026 Marine Manager. All rights reserved.</p>
+        </div>
+
+        <!-- ══════════════ SUPPORT ══════════════ -->
+        <div class="section" id="support">
+
+            <h2>Support</h2>
+            <p class="subtitle">Marine Manager — Fleet Management Tool</p>
+
+            <div class="highlight">
+                <p>For direct help, email us at <a href="mailto:cs.feedback.app@gmail.com">cs.feedback.app@gmail.com</a> — we typically respond within 24 hours.</p>
+            </div>
+
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I add a new vessel?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Tap the <strong>+</strong> button on the Fleet screen and fill in your vessel's details — name, IMO number, flag, type and any technical specifications. All information is saved locally and synced to your iCloud automatically.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I log a maintenance record?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Select your vessel, go to the <strong>Maintenance</strong> tab and tap <strong>+</strong>. Choose the equipment, enter the work done, date, running hours and any notes. You can also attach photos directly from your camera or photo library.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do running hours work?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Running hours are tracked per piece of equipment. Each time you log a maintenance entry you can update the current hours. The app uses these to calculate when the next service interval is due and highlights overdue items automatically.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I record a sea trial?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Go to the <strong>Sea Trials</strong> section and tap <strong>Start Trial</strong>. The app will record your GPS route, speed and weather conditions automatically. When the trial is complete, tap <strong>Stop</strong> to save the record with the full route and performance data.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    Is my data backed up?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Yes. Marine Manager syncs your data to your private iCloud account automatically. If you sign in with the same Apple ID on another device, your fleet data will be available there too. You can also back up your device via iCloud Backup or Finder/iTunes.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    Can I use the app on multiple devices?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Yes. Sign in with the same Apple ID on all your devices and your fleet data will sync across them automatically via iCloud Key-Value Storage.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How do I delete a vessel or record?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Swipe left on any vessel or record in the list to reveal the <strong>Delete</strong> button, or open the record and use the delete option in the menu. Deleted data is removed from all your devices via iCloud sync.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    The weather isn't loading — what should I check?
+                    <span class="arrow">+</span>
+                </div>
+                <div class="faq-a">
+                    Make sure you have granted Marine Manager location access in <strong>iOS Settings → Marine Manager → Location → While Using the App</strong>. Also check that you have an active internet connection — weather data is fetched from Open-Meteo in real time.
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-card">
+                <h3>Still need help?</h3>
+                <p>Send us an email and we'll get back to you within 24 hours.</p>
+                <br>
+                <a href="mailto:cs.feedback.app@gmail.com">cs.feedback.app@gmail.com</a>
+            </div>
+
+            <p class="footer" style="margin-top: 24px;">© 2026 Marine Manager. All rights reserved.</p>
+        </div>
+
+    </div><!-- /card -->
+</div><!-- /container -->
+
+<script>
+    function switchTab(id, el) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        el.classList.add('active');
+    }
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+</script>
 </body>
 </html>
